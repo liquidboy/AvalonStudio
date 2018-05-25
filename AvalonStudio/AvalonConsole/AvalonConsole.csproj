@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <OutputTypeEx>exe</OutputTypeEx>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <RuntimeIdentifiers>win7-x64;ubuntu.14.04-x64;debian.8-x64;osx.10.12-x64</RuntimeIdentifiers>
+    <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
+    <NoWarn>NU1701</NoWarn>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="**\*.resx;**\*.xaml;Assets\*;**\*.paml" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assets\icon.ico" />
+    <None Remove="Assets\icon.png" />
+    <None Remove="Assets\logo-256.png" />
+    <None Remove="Assets\logo-65.png" />
+    <None Remove="Assets\logo20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.6.2-build5192-beta" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.6.2-build5192-beta" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.6.2-build5192-beta" />
+    <PackageReference Include="Avalonia.Skia.Linux.Natives" Version="1.60.0.1" />
+    <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.6.2-build505-alpha" />
+    <PackageReference Include="Avalonia.Xaml.Interactions.Custom" Version="0.6.2-build505-alpha" />
+    <PackageReference Include="GitInfo" Version="2.0.10" />
+    <PackageReference Include="Mabiavalon.DockNC" Version="0.0.1-build111-alpha" />
+    <PackageReference Include="reactiveui" Version="8.0.1" />
+    <PackageReference Include="System.Composition" Version="1.1.0" />
+    <PackageReference Include="System.Drawing.Common" Version="4.5.0-preview1-26216-02" />
+    <PackageReference Include="System.Net.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Security.Principal" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="2.0.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\debugger-libs\Mono.Debugging\Mono.Debugging.csproj" />
+    <ProjectReference Include="..\Avalonia.Ide\src\Avalonia.Ide.LanguageServer.MSBuild\Avalonia.Ide.LanguageServer.MSBuild.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Controls.Standard\AvalonStudio.Controls.Standard.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Debugging.GDB.JLink\AvalonStudio.Debugging.GDB.JLink.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Debugging.GDB.Local\AvalonStudio.Debugging.GDB.Local.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Debugging.GDB.OpenOCD\AvalonStudio.Debugging.GDB.OpenOCD.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Debugging.GDB.Remote\AvalonStudio.Debugging.GDB.Remote.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Debugging.GDB\AvalonStudio.Debugging.GDB.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Debugging\AvalonStudio.Debugging.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Languages.CPlusPlus\AvalonStudio.Languages.CPlusPlus.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Languages.CSharp\AvalonStudio.Languages.CSharp.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Languages.Xaml\AvalonStudio.Languages.Xaml.csproj" />
+    <ProjectReference Include="..\AvalonStudio.LanguageSupport.TypeScript\AvalonStudio.LanguageSupport.TypeScript.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Projects.CPlusPlus\AvalonStudio.Projects.CPlusPlus.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Projects.OmniSharp\AvalonStudio.Projects.OmniSharp.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Repository\AvalonStudio.Repository.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Toolchains.Clang\AvalonStudio.Toolchains.Clang.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Toolchains.LocalGCC\AvalonStudio.Toolchains.LocalGCC.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Toolchains.PublishedGCC\AvalonStudio.Toolchains.PublishedGCC.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Toolchains.CustomGCC\AvalonStudio.Toolchains.CustomGCC.csproj" />
+    <ProjectReference Include="..\AvalonStudio.Toolchains.STM32\AvalonStudio.Toolchains.STM32.csproj" />
+    <ProjectReference Include="..\PortableCom\PortableCom.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>System</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
