@@ -11,21 +11,27 @@
     <NoWarn>NU1701</NoWarn>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <StartupObject>AvalonConsole.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="**\*.resx;**\*.xaml;Assets\*;**\*.paml" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="App.paml" />
     <None Remove="Assets\icon.ico" />
     <None Remove="Assets\icon.png" />
     <None Remove="Assets\logo-256.png" />
     <None Remove="Assets\logo-65.png" />
     <None Remove="Assets\logo20x20.png" />
+    <None Remove="MainWindow.paml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.6.2-build5192-beta" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.6.2-build5192-beta" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.6.2-build5192-beta" />
+    <PackageReference Include="Avalonia" Version="0.6.2-build5245-beta" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.6.2-build5245-beta" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.6.2-build5245-beta" />
     <PackageReference Include="Avalonia.Skia.Linux.Natives" Version="1.60.0.1" />
     <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.6.2-build505-alpha" />
     <PackageReference Include="Avalonia.Xaml.Interactions.Custom" Version="0.6.2-build505-alpha" />
